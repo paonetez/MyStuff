@@ -1,0 +1,77 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <div class="well text-center">
+            <h1> <small>Employee Details</small></h1>
+            <form #emp="ngForm" (ngSubmit)="onEmpFormSubmit(emp.form)">
+                <input type='hidden' name='' value='' />
+                <div class="form-group">
+                    <input class="form-control" id="emp_id" maxlength="100" name="empId" placeholder="Emp Id" type="text" [(ngModel)]="newEmp.empId" />
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="emp_firstname" maxlength="100" name="firstName" placeholder="Firstname" type="text" [(ngModel)]="newEmp.firstName"/>
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" id="emp_lastname" maxlength="100" name="lastName" placeholder="Lastname" type="text" [(ngModel)]="newEmp.lastName"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" id="emp_designation" maxlength="100" name="designation" placeholder="Designation" type="text" [(ngModel)]="newEmp.designation"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" id="emp_location" maxlength="100" name="location" placeholder="Location" type="text" [(ngModel)]="newEmp.location"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" id="emp_project" maxlength="100" name="project" placeholder="Project" type="text" [(ngModel)]="newEmp.project"/>
+                </div>
+                    
+                <!-- <div class="form-group">
+                    <textarea class="form-control" cols="40" id="" name="" placeholder="" rows="10">
+                    </textarea>
+                    
+                </div> -->
+                
+                <button type="submit" class="btn btn-primary">ADD</button>
+                <button type="submit" class="btn btn-danger">CANCEL</button>
+            </form>
+        
+        </div>
+        </div>
+   
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+        
+        <table class="table">
+            <thead class="thead-inverse">
+                <tr>    
+                    <th> EmpId</th>
+                    <th> Firstname </th>
+                    <th> Lastname </th>
+                    <th> Designation </th>
+                    <th> Location </th>
+                    <th> Project </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of empList">
+                <td>{{emp.empId}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.designation}}</td>
+                <td>{{emp.location}}</td>
+                <td>{{emp.project}}</td>
+                <tr>
+            </tbody>
+
+        </table>
+
+
+        </div>
+    </div>
+    
+</div>
